@@ -23,3 +23,6 @@ mapping_is_active = {
     'no' : False
 }
 
+df['gender'] = df['gender'].str.upper().map(mapping_gender)
+df['is_active'] = df['is_active'].map(mapping_is_active)
+
