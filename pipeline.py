@@ -26,3 +26,8 @@ mapping_is_active = {
 df['gender'] = df['gender'].str.upper().map(mapping_gender)
 df['is_active'] = df['is_active'].map(mapping_is_active)
 
+# Extraction des nombres dans la colonne hourly_rate_usd
+df['hourly_rate (USD)'] = df['hourly_rate (USD)'].str.extract(r'(\d+)').astype(float)
+
+# Renommage des colonnes
+df = df.rename(columns = {'hourly_rate (USD)' : 'hourly_rate_usd', 'freelancer_ID' : 'freelancer_id'})
