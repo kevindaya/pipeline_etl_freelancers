@@ -28,6 +28,7 @@ df['is_active'] = df['is_active'].map(mapping_is_active).astype('boolean')
 
 # Extraction des nombres dans la colonne hourly_rate_usd
 df['hourly_rate (USD)'] = df['hourly_rate (USD)'].str.extract(r'(\d+)').astype(float)
+df['client_satisfaction'] = df['client_satisfaction'].str.extract(r'(\d+)').astype(float)
 
 # Renommage des colonnes
 df = df.rename(columns = {'hourly_rate (USD)' : 'hourly_rate_usd', 'freelancer_ID' : 'freelancer_id'})
