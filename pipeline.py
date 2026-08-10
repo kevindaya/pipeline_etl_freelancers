@@ -19,12 +19,12 @@ mapping_is_active = {
     'True' : True,
     'yes' : True,
     'Y' : True,
-    'nan' : False,
     'no' : False
 }
 
 df['gender'] = df['gender'].str.upper().map(mapping_gender)
-df['is_active'] = df['is_active'].map(mapping_is_active)
+df['is_active'] = df['is_active'].map(mapping_is_active).astype('boolean')
+
 
 # Extraction des nombres dans la colonne hourly_rate_usd
 df['hourly_rate (USD)'] = df['hourly_rate (USD)'].str.extract(r'(\d+)').astype(float)
