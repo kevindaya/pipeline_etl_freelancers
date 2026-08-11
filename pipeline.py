@@ -25,10 +25,22 @@ mapping_is_active = {
 df['gender'] = df['gender'].str.upper().map(mapping_gender)
 df['is_active'] = df['is_active'].map(mapping_is_active).astype('boolean')
 
+# Combler les valeurs vides des colonnes non-numériques
+exclus = [element for element in df.columns if pd.api.types.is_string_dtype(df[element])]
+
+for element in exclus:
+    df[element] = df[element].fillna("Unknown")
+
+# Combler les valeurs vides des colonnes numériques
+mediane_age = df['age'].median()
+mediane_experience = df['years_of_experience'].median()
+
+df['age'] = df['age'].fillna(mediane_age)
+df['years_of_experience'] = df['years_of_experience'].fillna(mediane_experience)
 
 # Extraction des nombres dans la colonne hourly_rate_usd
 df['hourly_rate (USD)'] = df['hourly_rate (USD)'].str.extract(r'(\d+)').astype(float)
 df['client_satisfaction'] = df['client_satisfaction'].str.extract(r'(\d+)').astype(float)
 
-# Renommage des colonnes
+# Renommage des colonnes mal saisies
 df = df.rename(columns = {'hourly_rate (USD)' : 'hourly_rate_usd', 'freelancer_ID' : 'freelancer_id'})
