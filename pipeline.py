@@ -3,6 +3,9 @@ import numpy as np
 
 df = pd.read_csv("data/global_freelancers_raw.csv")
 
+# Renommage des colonnes mal saisies
+df = df.rename(columns = {'hourly_rate (USD)' : 'hourly_rate_usd', 'freelancer_ID' : 'freelancer_id'})
+
 # Valeurs à remplacer dans les colonnes du dataframe
 mapping_gender = {
     'F' : 'F',
@@ -39,7 +42,7 @@ df['age'] = df['age'].fillna(mediane_age)
 df['years_of_experience'] = df['years_of_experience'].fillna(mediane_experience)
 
 # Extraction des nombres dans la colonne hourly_rate_usd
-df['hourly_rate (USD)'] = df['hourly_rate (USD)'].str.extract(r'(\d+)').astype(float)
+df['hourly_rate_usd'] = df['hourly_rate_usd'].str.extract(r'(\d+)').astype(float)
 df['client_satisfaction'] = df['client_satisfaction'].str.extract(r'(\d+)').astype(float)
 
 # Renommage des colonnes mal saisies
