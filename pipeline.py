@@ -49,6 +49,8 @@ df['client_satisfaction'] = df['client_satisfaction'].str.extract(r'(\d+)').asty
 df['exp_bin'] = pd.cut(df['years_of_experience'], bins=[0, 3, 5, 7, 10, np.inf], labels=['0-3', '3-5', '5-7', '7-10', '10+'], include_lowest=True)
 df['hourly_rate_usd'] = df.groupby(['primary_skill', 'exp_bin'], observed=True)['hourly_rate_usd'].transform(lambda x: x.fillna(x.median()))
 
+# Suppression de la colonne temporaire exp_bin
+df = df.drop(columns=['exp_bin'])
 
 print(df.isna().sum())
 print(df.isna().mean() * 100)
