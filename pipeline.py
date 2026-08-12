@@ -45,5 +45,10 @@ df['years_of_experience'] = df['years_of_experience'].fillna(mediane_experience)
 df['hourly_rate_usd'] = df['hourly_rate_usd'].str.extract(r'(\d+)').astype(float)
 df['client_satisfaction'] = df['client_satisfaction'].str.extract(r'(\d+)').astype(float)
 
-# Renommage des colonnes mal saisies
-df = df.rename(columns = {'hourly_rate (USD)' : 'hourly_rate_usd', 'freelancer_ID' : 'freelancer_id'})
+# Estimer et combler les salaires vides selon l'expérience et le métier
+df['exp_bin'] = pd.cut(df['years_of_experience'], bins=[0, 3, 5, 7, 10, np.inf], labels=['0-3', '3-5', '5-7', '7-10', '10+'], include_lowest=True)
+df['hourly_rate_usd'] = df.groupby(['primary_skill', 'exp_bin'], observed=True)['hourly_rate_usd'].transform(lambda x: x.fillna(x.median()))
+
+
+print(df.isna().sum())
+print(df.isna().mean() * 100)
