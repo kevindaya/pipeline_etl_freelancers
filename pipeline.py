@@ -52,5 +52,6 @@ df['hourly_rate_usd'] = df.groupby(['primary_skill', 'exp_bin'], observed=True)[
 # Suppression de la colonne temporaire exp_bin
 df = df.drop(columns=['exp_bin'])
 
-print(df.isna().sum())
-print(df.isna().mean() * 100)
+# Sauvegarde du dataframe nettoyé dans un nouveau fichier CSV 
+
+df.to_csv('data/global_freelancers_clean.csv',index=False)
