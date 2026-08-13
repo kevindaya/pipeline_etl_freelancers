@@ -39,7 +39,11 @@ mediane_age = df['age'].median()
 mediane_experience = df['years_of_experience'].median()
 
 df['age'] = df['age'].fillna(mediane_age)
+exp_manquants = df['years_of_experience'].isna() 
 df['years_of_experience'] = df['years_of_experience'].fillna(mediane_experience)
+
+# Limiter l'expérience à l'âge - 18 pour les valeurs non manquantes
+df.loc[exp_manquants, 'years_of_experience'] = np.minimum(df.loc[exp_manquants, 'years_of_experience'], df.loc[exp_manquants, 'age'] - 18)
 
 # Extraction des nombres dans la colonne hourly_rate_usd
 df['hourly_rate_usd'] = df['hourly_rate_usd'].str.extract(r'(\d+)').astype(float)
