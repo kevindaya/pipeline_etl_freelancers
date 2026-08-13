@@ -2,11 +2,11 @@
 
 Pipeline de nettoyage de données (Extract → Transform → Load) en Python/Pandas, appliqué à un dataset de 1000 profils de freelances fictifs volontairement "sale" (formats mélangés, valeurs manquantes, incohérences de casse).
 
-Projet réalisé dans le cadre de mon apprentissage de la Data Engineering, avec un focus sur la compréhension du "pourquoi" derrière chaque décision de nettoyage — pas juste du code qui fonctionne.
+Projet réalisé dans le cadre de mon apprentissage de la Data Engineering, avec un focus sur la compréhension du "pourquoi" derrière chaque décision de nettoyage.
 
 ## Objectif
 
-Transformer un CSV brut et incohérent en un dataset propre, exploitable, avec des décisions de nettoyage documentées et justifiées — comme cela serait attendu dans un vrai contexte professionnel.
+Transformer un CSV brut et incohérent en un dataset propre, exploitable, avec des décisions de nettoyage documentées et justifiées.
 
 ## Dataset
 
@@ -36,14 +36,14 @@ Chaque valeur manquante n'a pas été traitée de la même façon — la straté
 | `hourly_rate_usd` | 9.4% | Médiane groupée par `primary_skill` × tranche d'expérience | Le taux horaire dépend fortement du métier et de l'ancienneté ; une médiane globale écraserait des écarts réels |
 | `rating` | 10.1% | **Non imputé**, laissé tel quel | Une note manquante signifie probablement "pas encore noté", pas "note moyenne" — inventer une valeur fausserait le sens de la donnée |
 | `client_satisfaction` | 17.6% | **Non imputé**, laissé tel quel | Même logique que `rating`, avec un taux de manquants trop élevé (17.6%) pour une imputation fiable |
-| `is_active` | 8.9% | Type `boolean` nullable (`pd.NA`) | Garde l'information "on ne sait pas" honnête plutôt que de forcer une valeur |
-
-**Principe général appliqué** : on impute uniquement quand (1) le taux de manquants est faible et (2) l'absence de valeur n'a pas de sens métier fort en elle-même. Sinon, on documente et on laisse le manque visible.
+| `is_active` | 8.9% | Type `boolean` nullable (`pd.NA`) | Possibilité de confidentialité du statut du freelancer (ni `True` ni `False`) |
+| `toutes_les_colonnes_non_numériques`| Varie selon la colonnes | Les valeurs manquantes ont été remplacées par `Unknown` | Il s'agit particulièrement des colonnes de type `string`, leurs valeurs manquantes ne réprésentaient pas d'informations exploitables|
+**Principe général appliqué** : on impute uniquement quand le taux de manquants est faible et l'absence de valeur n'a pas de sens métier fort en elle-même. Sinon, on documente et on laisse le manque visible.
 
 ## Limites connues
 
 - L'imputation de `years_of_experience` par une médiane globale (9 ans) créait des incohérences pour les profils jeunes (ex: 20 ans avec 9 ans d'expérience). Correction appliquée : plafonnement à `age - 18`, sous l'hypothèse qu'une carrière ne commence pas avant 18 ans.
-- Les valeurs manquantes de `hourly_rate_usd` sont supposées liées à des profils incomplets. En contexte réel, cette hypothèse serait à valider avec le propriétaire des données (confidentialité possible).
+- Les valeurs manquantes de `hourly_rate_usd` sont supposées liées à des profils incomplets. En contexte réel, cette hypothèse serait à valider avec le propriétaire des données (confidentialité possible) : les valeurs manquantes ont été comblées par médiane groupée selon `primary_skill` et `hourly_rate_usd` à partir des données possédées.
 
 ## Bugs pandas rencontrés (et compris)
 
