@@ -16,7 +16,7 @@ FL250014,Phillip Shelton,M,38.0,Argentina,Spanish,Graphic Design,20.0,75.0,2.9,T
 FL250015,Edward Ferguson,M,50.0,Germany,German,Data Analysis,22.0,75.0,3.7,True,70.0
 FL250016,Wyatt Stout,M,42.0,Japan,Japanese,Data Analysis,0.0,30.0,1.2,False,69.0
 FL250017,Laura Johnson,F,39.0,Australia,English,DevOps,13.0,30.0,2.5,False,60.0
-FL250018,Scott Burns,M,56.0,India,Hindi,Blockchain Development,9.0,40.0,,,87.0
+FL250018,Scott Burns,M,56.0,India,Hindi,Blockchain Development,9.0,45.0,,,87.0
 FL250019,Tyler Aguirre,M,56.0,United States,English,UI/UX Design,31.0,50.0,1.1,False,75.0
 FL250020,Matthew Lawson,M,57.0,Italy,Italian,Web Development,3.0,100.0,1.8,True,68.0
 FL250021,James Cherry,M,41.0,Indonesia,Indonesian,AI,9.0,50.0,1.8,False,65.0
@@ -57,7 +57,7 @@ FL250055,Jennifer Mcintyre,F,29.0,Turkey,Turkish,Cybersecurity,11.0,100.0,2.3,Tr
 FL250056,Larry Simpson,M,50.0,United Kingdom,English,AI,15.0,40.0,2.0,True,65.0
 FL250057,Laura Price,F,26.0,United Kingdom,English,DevOps,8.0,50.0,1.3,False,76.0
 FL250058,Mark Wright,M,38.0,Canada,English,AI,17.0,40.0,4.0,True,90.0
-FL250059,Samantha Mcdaniel,F,23.0,India,Hindi,Mobile Apps,9.0,75.0,3.6,True,65.0
+FL250059,Samantha Mcdaniel,F,23.0,India,Hindi,Mobile Apps,5.0,75.0,3.6,True,65.0
 FL250060,Barbara Foster,F,51.0,South Africa,Afrikaans,DevOps,28.0,40.0,3.9,False,63.0
 FL250061,Courtney Tran,F,51.0,Indonesia,Indonesian,AI,33.0,75.0,0.0,True,
 FL250062,Eddie Todd,M,47.0,Germany,German,AI,18.0,75.0,0.0,False,
@@ -277,7 +277,7 @@ FL250275,William Gaines,M,59.0,France,French,Web Development,21.0,100.0,0.0,,70.
 FL250276,Haley Yates,F,26.0,China,Mandarin,UI/UX Design,4.0,100.0,3.6,False,81.0
 FL250277,Richard Mcguire,M,44.0,Russia,Russian,Machine Learning,18.0,20.0,4.7,True,88.0
 FL250278,Stephanie Fisher,F,31.0,South Africa,Afrikaans,UI/UX Design,12.0,40.0,,True,100.0
-FL250279,Anthony Goodwin DDS,M,60.0,Turkey,Turkish,Data Analysis,6.0,62.5,3.2,False,95.0
+FL250279,Anthony Goodwin DDS,M,60.0,Turkey,Turkish,Data Analysis,6.0,50.0,3.2,False,95.0
 FL250280,Meagan Walters,F,23.0,United Kingdom,English,Blockchain Development,4.0,20.0,,False,71.0
 FL250281,David Powell,M,42.0,Indonesia,Indonesian,UI/UX Design,13.0,20.0,4.7,False,85.0
 FL250282,Kelly Jones,F,48.0,India,Hindi,Mobile Apps,6.0,30.0,,False,96.0
@@ -505,7 +505,7 @@ FL250503,Isabel Brown,F,21.0,Japan,Japanese,UI/UX Design,0.0,30.0,4.2,True,79.0
 FL250504,Michael Stein,M,23.0,South Korea,Korean,Blockchain Development,1.0,40.0,0.0,False,64.0
 FL250505,Robert Stone,M,21.0,United Kingdom,English,Mobile Apps,1.0,30.0,1.0,False,81.0
 FL250506,Dillon Henry,M,31.0,Argentina,Spanish,AI,7.0,75.0,4.4,False,83.0
-FL250507,James Todd,M,21.0,Mexico,Spanish,Blockchain Development,9.0,40.0,4.0,False,91.0
+FL250507,James Todd,M,21.0,Mexico,Spanish,Blockchain Development,3.0,40.0,4.0,False,91.0
 FL250508,Clifford Moore MD,M,33.0,United Kingdom,English,Cybersecurity,6.0,50.0,3.1,False,
 FL250509,John Rios,M,57.0,Brazil,Portuguese,Web Development,5.0,75.0,1.1,True,77.0
 FL250510,Anthony Gaines,M,52.0,United States,English,DevOps,17.0,75.0,0.0,False,94.0
@@ -569,7 +569,7 @@ FL250567,Stephanie Burton,F,22.0,Turkey,Turkish,UI/UX Design,3.0,40.0,3.0,True,9
 FL250568,Kevin Gonzales,M,41.0,Canada,English,Cybersecurity,11.0,50.0,3.5,True,68.0
 FL250569,Dawn Hardy,F,25.0,Argentina,Spanish,Web Development,5.0,40.0,,True,75.0
 FL250570,Margaret Perkins,F,38.0,Canada,English,UI/UX Design,3.0,40.0,4.7,False,69.0
-FL250571,Amanda Vargas,F,43.0,United States,English,DevOps,1.0,40.0,2.9,False,78.0
+FL250571,Amanda Vargas,F,43.0,United States,English,DevOps,1.0,45.0,2.9,False,78.0
 FL250572,Tonya Gonzalez,F,54.0,Mexico,Spanish,AI,1.0,75.0,4.4,True,
 FL250573,Elizabeth Bowman,F,31.0,Indonesia,Indonesian,Mobile Apps,2.0,40.0,2.3,False,98.0
 FL250574,Ariana Pittman,F,56.0,Mexico,Spanish,AI,3.0,30.0,3.7,,83.0
@@ -629,7 +629,7 @@ FL250627,Denise Erickson,F,46.0,Italy,Italian,Mobile Apps,9.0,100.0,4.4,True,97.
 FL250628,Nicole Austin,F,22.0,France,French,Blockchain Development,0.0,30.0,4.9,False,73.0
 FL250629,Summer Williams,F,23.0,South Africa,Afrikaans,AI,0.0,75.0,2.3,,60.0
 FL250630,Angela Blackwell,F,60.0,Turkey,Turkish,Web Development,41.0,40.0,4.9,True,66.0
-FL250631,Thomas Wall,M,20.0,Canada,English,DevOps,9.0,75.0,4.3,False,90.0
+FL250631,Thomas Wall,M,20.0,Canada,English,DevOps,2.0,75.0,4.3,False,90.0
 FL250632,Sarah Anderson,F,41.0,South Korea,Korean,UI/UX Design,23.0,75.0,1.4,False,
 FL250633,Christian Lane,M,24.0,France,French,Mobile Apps,0.0,100.0,,False,
 FL250634,Todd Casey,M,44.0,Netherlands,Dutch,Machine Learning,4.0,30.0,1.3,True,77.0
@@ -871,7 +871,7 @@ FL250869,Kelly Ellis,F,56.0,China,Mandarin,UI/UX Design,35.0,40.0,2.7,True,82.0
 FL250870,Caleb Guerra,M,57.0,Mexico,Spanish,Mobile Apps,21.0,75.0,2.0,False,96.0
 FL250871,Samantha Norman,F,56.0,Russia,Russian,DevOps,3.0,40.0,1.7,False,71.0
 FL250872,Sarah Clarke,F,49.0,Germany,German,Mobile Apps,24.0,75.0,3.0,True,77.0
-FL250873,Aaron Blair,M,26.0,Spain,Spanish,Blockchain Development,9.0,75.0,2.1,True,
+FL250873,Aaron Blair,M,26.0,Spain,Spanish,Blockchain Development,8.0,75.0,2.1,True,
 FL250874,Courtney Burton,F,36.0,South Korea,Korean,UI/UX Design,0.0,75.0,1.5,,73.0
 FL250875,Gerald Taylor,M,20.0,Russia,Russian,Web Development,2.0,30.0,1.7,True,60.0
 FL250876,Mary Ward,F,40.0,Spain,Spanish,AI,9.0,40.0,1.2,True,67.0
@@ -886,7 +886,7 @@ FL250884,Beth Huff,F,48.0,Canada,English,Cybersecurity,24.0,100.0,4.8,True,84.0
 FL250885,John Mckinney,M,30.0,Indonesia,Indonesian,DevOps,9.0,100.0,4.5,,78.0
 FL250886,Sarah Ho,F,33.0,Netherlands,Dutch,UI/UX Design,6.0,50.0,3.1,False,90.0
 FL250887,Lindsey Wang,F,50.0,United Kingdom,English,DevOps,11.0,50.0,4.9,True,88.0
-FL250888,Margaret Schwartz,F,24.0,Indonesia,Indonesian,Data Analysis,9.0,20.0,0.0,False,76.0
+FL250888,Margaret Schwartz,F,24.0,Indonesia,Indonesian,Data Analysis,6.0,20.0,0.0,False,76.0
 FL250889,Kyle Ray,M,38.0,Italy,Italian,Web Development,14.0,75.0,1.5,False,62.0
 FL250890,Isaac Hebert,M,56.0,Japan,Japanese,DevOps,2.0,75.0,2.4,False,
 FL250891,Michele Jones,F,41.0,Russia,Russian,DevOps,2.0,100.0,4.5,False,75.0
@@ -926,7 +926,7 @@ FL250924,Lori Marshall,F,49.0,South Korea,Korean,Mobile Apps,24.0,100.0,3.6,True
 FL250925,Jennifer Miller,F,58.0,Brazil,Portuguese,Blockchain Development,29.0,30.0,3.3,True,89.0
 FL250926,Thomas Young,M,50.0,South Africa,Afrikaans,UI/UX Design,13.0,50.0,2.5,True,81.0
 FL250927,Zachary Larsen,M,27.0,South Africa,Afrikaans,DevOps,1.0,100.0,3.7,True,61.0
-FL250928,Valerie Gutierrez,F,20.0,South Korea,Korean,Machine Learning,9.0,30.0,4.6,True,
+FL250928,Valerie Gutierrez,F,20.0,South Korea,Korean,Machine Learning,2.0,30.0,4.6,True,
 FL250929,Daniel Parker,M,52.0,Russia,Russian,Blockchain Development,15.0,40.0,0.0,True,92.0
 FL250930,Nicole Bennett,F,22.0,France,French,Machine Learning,2.0,30.0,2.0,False,96.0
 FL250931,Lauren Lowery,F,38.0,Turkey,Turkish,Web Development,14.0,100.0,1.7,False,66.0
@@ -985,7 +985,7 @@ FL250983,Cindy Williams,F,41.0,South Africa,Afrikaans,Graphic Design,0.0,40.0,0.
 FL250984,Laura Wong DDS,F,50.0,Italy,Italian,Data Analysis,16.0,75.0,4.5,False,69.0
 FL250985,Robert Moran,M,48.0,South Africa,Afrikaans,Web Development,8.0,50.0,,True,73.0
 FL250986,Bradley Wu,M,60.0,Spain,Spanish,Blockchain Development,39.0,20.0,1.4,True,86.0
-FL250987,Daniel Thomas,M,26.0,Egypt,Arabic,Machine Learning,9.0,50.0,0.0,True,81.0
+FL250987,Daniel Thomas,M,26.0,Egypt,Arabic,Machine Learning,8.0,50.0,0.0,True,81.0
 FL250988,Michelle Peterson,F,35.0,South Korea,Korean,Graphic Design,16.0,100.0,4.3,True,74.0
 FL250989,Seth Thomas,M,23.0,United States,English,Blockchain Development,4.0,100.0,2.2,True,64.0
 FL250990,Evan Ramos,M,37.0,Australia,English,Graphic Design,4.0,75.0,3.2,False,76.0
