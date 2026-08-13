@@ -68,6 +68,3 @@ python pipeline.py
 
 Génère `data/global_freelancers_clean.csv` à partir de `data/global_freelancers_raw.csv`.
 
-## Auteur
-
-Kevin Ndaya — Étudiant DUT Génie Informatique, IUT de Douala
