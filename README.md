@@ -38,6 +38,7 @@ Chaque valeur manquante n'a pas été traitée de la même façon — la straté
 | `client_satisfaction` | 17.6% | **Non imputé**, laissé tel quel | Même logique que `rating`, avec un taux de manquants trop élevé (17.6%) pour une imputation fiable |
 | `is_active` | 8.9% | Type `boolean` nullable (`pd.NA`) | Possibilité de confidentialité du statut du freelancer (ni `True` ni `False`) |
 | `toutes_les_colonnes_non_numériques`| Varie selon la colonnes | Les valeurs manquantes ont été remplacées par `Unknown` | Il s'agit particulièrement des colonnes de type `string`, leurs valeurs manquantes ne réprésentaient pas d'informations exploitables|
+
 **Principe général appliqué** : on impute uniquement quand le taux de manquants est faible et l'absence de valeur n'a pas de sens métier fort en elle-même. Sinon, on documente et on laisse le manque visible.
 
 ## Limites connues

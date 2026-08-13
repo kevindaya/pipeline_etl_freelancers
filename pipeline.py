@@ -59,3 +59,5 @@ df = df.drop(columns=['exp_bin'])
 # Sauvegarde du dataframe nettoyé dans un nouveau fichier CSV 
 
 df.to_csv('data/global_freelancers_clean.csv',index=False)
+
+print(df.describe())
