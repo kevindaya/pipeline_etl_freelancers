@@ -1,7 +1,29 @@
-import pandas as pd
+import os
 import numpy as np
+import pandas as pd
+import kagglehub as kh
+import shutil
 
-df = pd.read_csv("data/global_freelancers_raw.csv")
+# Créer le dossier data s'il n'existe pas 
+os.makedirs("data", exist_ok=True)
+
+# Extraction du fichier CSV
+cache_path = kh.dataset_download("urvishahir/global-freelancers-raw-dataset", force_download=True)
+
+liste_fichiers = os.listdir(cache_path)
+
+print("Contenu du dossier cache :", liste_fichiers)
+
+# Chemin du fichier dans le cache Kaggle
+fichier_source = os.path.join(cache_path, liste_fichiers[0])
+
+# Chemin de destination dans le dossier /data
+fichier_destination = os.path.join("data", "global_freelancers_raw.csv")
+
+shutil.copy(fichier_source, fichier_destination)
+print("Copié vers :", fichier_destination)
+
+df = pd.read_csv(fichier_destination)
 
 # Renommage des colonnes mal saisies
 df = df.rename(columns = {'hourly_rate (USD)' : 'hourly_rate_usd', 'freelancer_ID' : 'freelancer_id'})
