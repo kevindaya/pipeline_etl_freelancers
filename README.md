@@ -12,6 +12,7 @@ Transformer un CSV brut et incohérent en un dataset propre, exploitable, avec d
 
 - **Source** : [Global Freelancers (Raw) Dataset](https://www.kaggle.com/datasets/urvishahir/global-freelancers-raw-dataset) — Urvish Ahir, licence CC0 (domaine public)
 - **Contenu** : 1000 profils fictifs générés avec la librairie `Faker` (nom, genre, âge, pays, langue, compétence principale, années d'expérience, taux horaire, note, statut actif, satisfaction client)
+- **Extraction** : Téléchargement automatisé via l'API Kaggle.
 - `data/global_freelancers_raw.csv` : fichier source, jamais modifié
 - `data/global_freelancers_clean.csv` : fichier généré par `pipeline.py`, prêt à l'emploi
 
