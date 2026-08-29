@@ -3,6 +3,11 @@ import numpy as np
 import pandas as pd
 import kagglehub as kh
 import shutil
+from dotenv import load_dotenv
+from google.cloud import bigquery
+
+# Charger les variables d'environnement
+load_dotenv()
 
 # Créer le dossier data s'il n'existe pas 
 os.makedirs("data", exist_ok=True)
@@ -79,7 +84,51 @@ df['hourly_rate_usd'] = df.groupby(['primary_skill', 'exp_bin'], observed=True)[
 df = df.drop(columns=['exp_bin'])
 
 # Sauvegarde du dataframe nettoyé dans un nouveau fichier CSV 
-
 df.to_csv('data/global_freelancers_clean.csv',index=False)
 
-print(df.describe())
+# Étape de chargement des données
+
+# Utilisation des variables d'environnement
+PROJECT_ID = os.environ["PROJECT_ID"]
+DATASET_ID = os.environ["DATASET_ID"]
+TABLE_ID = "global_freelancers_clean"
+
+table_ref = f"{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}"
+
+# Authentification et création du client BigQuery 
+client = bigquery.Client(project=PROJECT_ID)
+
+# Définition des colonnes et des types de la table
+schema = [
+    bigquery.SchemaField("freelancer_id", "STRING"),
+    bigquery.SchemaField("name", "STRING"),
+    bigquery.SchemaField("gender", "STRING"),
+    bigquery.SchemaField("age", "FLOAT64"),
+    bigquery.SchemaField("country", "STRING"),
+    bigquery.SchemaField("language", "STRING"),
+    bigquery.SchemaField("primary_skill", "STRING"),
+    bigquery.SchemaField("years_of_experience", "FLOAT64"),
+    bigquery.SchemaField("hourly_rate_usd", "FLOAT64"),
+    bigquery.SchemaField("rating", "FLOAT64"),
+    bigquery.SchemaField("is_active", "BOOL"),
+    bigquery.SchemaField("client_satisfaction", "FLOAT64"),
+]
+
+# Définition des paramètres de l'opération de chargement
+job_config = bigquery.LoadJobConfig(
+    schema=schema,
+    skip_leading_rows=1,
+    source_format=bigquery.SourceFormat.CSV,
+# Si les données existent déjà dans la table, BigQuery écrasera les données existantes
+    write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,  
+)
+
+# Chargement du fichier CSV dans la table BigQuery
+with open("data/global_freelancers_clean.csv", "rb") as source_file:
+    load_job = client.load_table_from_file(source_file, table_ref, job_config=job_config)
+
+load_job.result()  # bloque jusqu'à la fin du job, lève une exception si le chargement échoue
+
+# Récupération de la table pour obtenir le nombre de lignes chargées
+table = client.get_table(table_ref)
+print(f"Chargement terminé : {table.num_rows} lignes dans {table_ref}")
